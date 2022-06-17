@@ -1,0 +1,13 @@
+@use "../../styles/base.module.scss";
+
+.layout {
+  padding: 0 2rem;
+  background: rgb(255, 255, 255);
+  min-height: 100vh;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 1) 40%, base.$primary-color 100%);
+}
+
+.restrictedContainer {
+  max-width: base.$max-width;
+  margin: 0 auto;
+}
