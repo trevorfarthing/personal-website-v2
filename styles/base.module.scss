@@ -1,0 +1,51 @@
+$primary-color: rgba(35, 103, 2, 0.48);
+$secondary-color: rgba(199, 181, 145, 0.52);
+$gray: #a8a8a8;
+$body-font: "Inconsolata";
+$heading-font: "Playfair Display";
+$spacing: 0.5rem;
+$max-width: 1920px;
+
+@mixin halfSecondEase {
+  transition: all 0.5s ease;
+}
+
+@mixin underline {
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 1px;
+  left: 50%;
+  position: absolute;
+  background: #000;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+@mixin underlineHover {
+  width: 100%;
+  left: 0;
+}
+
+.secondaryDivider {
+  background-color: $secondary-color;
+  border-width: 1px;
+}
+
+.inlineLink {
+  text-decoration: underline;
+}
+
+.inlineLink:hover {
+  color: $secondary-color;
+  @include halfSecondEase;
+}
+
+:export {
+  primaryColor: $primary-color;
+  secondaryColor: $secondary-color;
+  bodyFont: $body-font;
+  headingFont: $heading-font;
+  spacing: $spacing;
+  maxWidth: $max-width;
+}

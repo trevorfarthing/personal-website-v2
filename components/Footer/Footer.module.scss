@@ -1,0 +1,34 @@
+@use "../../styles/base.module.scss";
+
+.footerLink {
+  margin-right: base.$spacing * 1.5;
+  font-size: 1.25rem;
+  display: inline-block;
+  position: relative;
+}
+
+.footerLink:after {
+  @include base.underline;
+}
+
+.footerLink:hover:after {
+  @include base.underlineHover;
+}
+
+.bullet {
+  margin-right: base.$spacing * 1.5;
+}
+
+.footer {
+  padding: base.$spacing * 2;
+  border-top: 1px solid black;
+  margin-top: base.$spacing * 2;
+}
+
+.fixedFooter {
+  @extend .footer;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  max-width: base.$max-width;
+}

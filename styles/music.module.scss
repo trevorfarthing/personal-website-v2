@@ -1,0 +1,28 @@
+@use "./base.module.scss";
+
+.main {
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+.divider {
+  background-color: base.$secondary-color;
+  border-width: 1px;
+  margin-bottom: base.$spacing * 8;
+}
+
+.trackContainer {
+  overflow: hidden;
+  border-radius: 5px;
+  box-shadow: 0 0 0 2px rgb(255, 255, 255), 0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+  background-color: base.$secondary-color;
+  @include base.halfSecondEase;
+}
+
+.trackContainer:hover {
+  transform: scale(1.1);
+}
+
+.musicContainer {
+  margin-bottom: base.$spacing * 8;
+}

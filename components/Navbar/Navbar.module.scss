@@ -1,0 +1,27 @@
+@use "../../styles/base.module.scss";
+
+.navBar {
+  padding: 1rem;
+}
+
+.navBar a {
+  font-size: 1.25rem;
+}
+
+.homeLink {
+  float: left;
+  position: absolute;
+}
+
+.navLink {
+  display: inline-block;
+  position: relative;
+}
+
+.navLink:after {
+  @include base.underline;
+}
+
+.navLink:hover:after {
+  @include base.underlineHover;
+}

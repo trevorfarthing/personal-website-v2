@@ -1,0 +1,78 @@
+@use "../../styles/base.module.scss";
+$spotifyGreen: #1db954;
+$soundcloudOrange: #ff7700;
+$bandcampBlue: #477987;
+
+.songBox {
+  @include base.halfSecondEase;
+  background-color: base.$secondary-color;
+}
+
+.albumArt {
+  @include base.halfSecondEase;
+  width: 100%;
+}
+
+.songCaption {
+  @include base.halfSecondEase;
+  padding-left: 10px;
+  height: 45px;
+  transition: all 0.5s ease;
+  color: white;
+  font-size: 14px;
+}
+
+.musicLink {
+  transition: all 0.2s ease;
+  font-size: 2em;
+  float: right;
+  margin-right: 10px;
+}
+
+.soundcloudLink:hover {
+  color: $soundcloudOrange;
+}
+
+.spotifyLink:hover {
+  color: $spotifyGreen;
+}
+
+.bandcampLink:hover {
+  color: $bandcampBlue;
+}
+
+.songTitle {
+  position: relative;
+  top: 10px;
+}
+
+.playButton {
+  @include base.halfSecondEase;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+}
+
+.playIcon {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  font-size: 60px;
+  z-index: 10;
+}
+
+.playIcon:hover {
+  cursor: pointer;
+}
+
+.circleSlider {
+  @include base.halfSecondEase;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+.loadingIcon {
+  top: -27px;
+  left: -30px;
+}
