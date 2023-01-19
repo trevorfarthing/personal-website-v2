@@ -1,4 +1,3 @@
-import { StaticImageData } from "next/image";
 import {
   ShadesOfGreenImage,
   DaylightImage,
@@ -20,12 +19,7 @@ import {
   HandsOfFoolsImage,
   SonanceImage,
 } from "../public/album_artwork/index";
-
-interface Track {
-  title: string;
-  link: string;
-  artworkSource: StaticImageData;
-}
+import { Track } from "../types/music-types";
 
 export const linkTypes = {
   spotify: "spotify",
@@ -45,7 +39,7 @@ export const getLinkType = (track: Track): string => {
   return "";
 };
 
-// TODO: Move this to a DB and file storage for images
+// TODO: Move this to a DB and file storage for images. Also remove some tracks and add newer ones.
 export const trackList: Track[] = [
   {
     title: "Puzzle Pieces",
@@ -168,3 +162,10 @@ export const trackList: Track[] = [
     artworkSource: SonanceImage,
   },
 ];
+
+export const formatDuration = (ms: number) => {
+  const seconds = ms / 1000;
+  const minute = Math.floor(seconds / 60);
+  const secondLeft = Math.trunc(seconds - minute * 60);
+  return `${minute}:${secondLeft < 10 ? `0${secondLeft}` : secondLeft}`;
+};

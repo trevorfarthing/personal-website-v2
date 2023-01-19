@@ -15,19 +15,19 @@ const Footer = () => {
 
   return (
     <footer className={footerClass}>
-      <Link href={links.email}>
+      <Link href={links.email} legacyBehavior>
         <a className={styles.footerLink}>Mail</a>
       </Link>
       <span className={styles.bullet}>&bull;</span>
-      <Link href={links.linkedIn}>
+      <Link href={links.linkedIn} legacyBehavior>
         <a className={styles.footerLink}>LinkedIn</a>
       </Link>
       <span className={styles.bullet}>&bull;</span>
-      <Link href={links.facebook}>
+      <Link href={links.facebook} legacyBehavior>
         <a className={styles.footerLink}>Facebook</a>
       </Link>
       <span className={styles.bullet}>&bull;</span>
-      <Link href={links.instagram}>
+      <Link href={links.instagram} legacyBehavior>
         <a className={styles.footerLink}>Instagram</a>
       </Link>
     </footer>

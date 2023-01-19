@@ -1,0 +1,8 @@
+- Try using react-player package instead of SoundCloud - but can load SoundCloud URLs
+- Finish loading states for SongCards
+- Get the seek working and the duration advancing on SongCards
+- Add in work category about Valence
+- Possibly create dropdown for Music page with another page for videos
+- Make sure everything is responsive for mobile
+- Setup Github Actions to new S3 bucket and move where my domain name is pointing to
+- Remove some old song cards and add new ones

@@ -6,6 +6,7 @@ $bandcampBlue: #477987;
 .songBox {
   @include base.halfSecondEase;
   background-color: base.$secondary-color;
+  position: relative;
 }
 
 .albumArt {
@@ -51,7 +52,7 @@ $bandcampBlue: #477987;
   position: absolute;
   left: 50%;
   top: 50%;
-  color: rgba(0, 0, 0, 0.5);
+  color: rgba(255, 255, 255, 0.5);
   opacity: 0;
 }
 
@@ -66,13 +67,23 @@ $bandcampBlue: #477987;
   cursor: pointer;
 }
 
-.circleSlider {
-  @include base.halfSecondEase;
-  position: absolute;
-  transform: translate(-50%, -50%);
-}
-
 .loadingIcon {
   top: -27px;
   left: -30px;
+}
+
+.slider {
+  padding: 0;
+}
+
+.sliderContainer {
+  @include base.halfSecondEase;
+  padding: 0 10px;
+  margin-top: -20px;
+}
+
+.timeDisplay {
+  @include base.halfSecondEase;
+  height: 10px;
+  padding: 0 10px;
 }

@@ -1,0 +1,12 @@
+@use "./base.module.scss";
+
+.main {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  margin: 0 auto;
+  max-width: 1000px;
+}
+
+.pageTitle {
+  text-align: center;
+}

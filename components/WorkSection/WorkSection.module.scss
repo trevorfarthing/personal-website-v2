@@ -1,0 +1,57 @@
+@use "../../styles/base.module.scss";
+
+.projectPhoto {
+  @include base.halfSecondEase;
+  width: 30%;
+  height: 30%;
+  text-align: center;
+  image-rendering: -moz-crisp-edges; /* Firefox */
+  image-rendering: -o-crisp-edges; /* Opera */
+  image-rendering: -webkit-optimize-contrast; /* Webkit (non-standard naming) */
+  image-rendering: crisp-edges;
+  -ms-interpolation-mode: nearest-neighbor; /* IE (non-standard property) */
+  transform: scale(1.01);
+}
+
+.projectPhoto:hover {
+  transform: scale(1.1);
+}
+
+.projectPhotos {
+  padding: 50px 0px;
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.projSectionTitle {
+  background-color: transparent;
+  letter-spacing: 5px;
+  height: 100%;
+  text-align: center;
+  padding-bottom: 5px;
+  margin-bottom: 1rem;
+}
+
+.projSectionInfo {
+  text-align: center;
+  padding: 50px 0px 0px 0px;
+  text-align: justify;
+}
+
+.imageContainer {
+  margin: 0 auto;
+  max-height: 200px;
+  max-width: 200px;
+  height: 200px;
+  width: 200px;
+  overflow: hidden;
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px rgb(255, 255, 255), 0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.projectContent {
+  margin-top: 1rem;
+}
