@@ -1,6 +1,7 @@
 @use "./base.module.scss";
 
 .main {
+  padding-top: 100px;
   margin: 0 auto;
   max-width: 800px;
 }
@@ -25,4 +26,8 @@
 
 .musicContainer {
   margin-bottom: base.$spacing * 8;
+}
+
+.musicPlayer {
+  display: none;
 }

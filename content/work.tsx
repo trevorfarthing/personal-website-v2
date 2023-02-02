@@ -5,12 +5,15 @@ import {
   CLabsLogoCircleImage,
   GermanyCircleImage,
   GuitarCircleImage,
+  HSFLogoCircleImage,
   InterCodesLogoCircleImage,
   InterCodesTeamCircleImage,
   InterCodesTeamCircleImage2,
   NervesCircleImage,
   ProfessionalCircleImage,
   ShadesOfGreenCircleImage,
+  SpaceflightLogoCircleImage,
+  ValenceLogoCircleImage,
 } from "../public/work_images/index";
 
 interface WorkSection {
@@ -22,16 +25,47 @@ interface WorkSection {
 // Content that will be displayed on the /work page.
 export const workSections: WorkSection[] = [
   {
+    title: "Valence",
+    images: [SpaceflightLogoCircleImage, ValenceLogoCircleImage, HSFLogoCircleImage],
+    content: (
+      <div>
+        A little less than a year into the pandemic in 2020, I took on a new position as a Software Engineer at Valence,
+        a digital strategy, design, and engineering firm. Here I embraced new responsibilities, working as a fullstack
+        developer with numerous clients ranging from Providence Health & Services to Spaceflight.
+        <br />
+        <br />I led the frontend development for Spaceflight&apos;s new Mission Control web application, an
+        all-encompassing tool for mission managers to help prepare customers wishing to launch a satellite on a rocket
+        owned by SpaceX (or another manufacturer). While I built the UI components using React, I also contributed to
+        the construction of API endpoints with AWS Lambdas and CloudFormation. Read more about this project{" "}
+        <a href="https://valencelevel.com/case-studies/spaceflight-mission-control/" className={styles.inlineLink}>
+          here
+        </a>
+        .
+        <br />
+        <br />
+        My most recent work at Valence involved the improvement of <i>Prosper</i>, a platform utilized by the Hispanic
+        Scholarship Fund (HSF) and Cheech Marin, among others, to help support students and provide scholarships. Using
+        React, node.js, SQL, and everything in between, I eliminated a plethora of bugs, helping to stabilize the
+        overall system. I also repaired and completed the implementation of their real-time chat and Canvas integration,
+        two primary features that were formerly unmaintained. Check out HSF{" "}
+        <a href="https://www.hsf.net/" className={styles.inlineLink}>
+          here
+        </a>
+        .
+      </div>
+    ),
+  },
+  {
     title: "C-Labs",
     images: [GermanyCircleImage, CLabsLogoCircleImage, ProfessionalCircleImage],
     content: (
       <div>
-        I began working at C-Labs as a software development intern during the summer of 2016. After graduation, I
-        accepted a full time role with the company and helped develop solutions for their then parent company TRUMPF,
-        one of the world&apos;s largest providers of machine tools.
+        I began working at C-Labs as a software development intern during the summer of 2016. After my graduation in
+        2018, I accepted a full time role with the company and helped develop solutions for their then parent company
+        TRUMPF, one of the world&apos;s largest providers of machine tools.
         <br />
         <br />
-        Much of my experience involved creating plugins for the C-DEngine, C-Labs&apos; state-of-the-art
+        Much of my experience involved creating plugins in C# for the C-DEngine, C-Labs&apos; state-of-the-art
         &quot;real&quot; industrial IoT service. Over the course of my two full-time years with C-Labs, I enhanced their
         software&apos;s storage capabilities, creating ways to store application data in databases such as SQL Server,
         Oracle, and InfluxDB. My contributions also included testing and improving their pub-sub messaging system

@@ -1,4 +1,5 @@
 import { StaticImageData } from "next/image";
+import { Dispatch, SetStateAction } from "react";
 
 export interface ExternalSongLink {
   linkType: string;
@@ -9,16 +10,24 @@ export interface SongCardProps {
   albumArtSource: StaticImageData;
   songTitle: string;
   externalLink: ExternalSongLink;
-  id: string;
-  selectedTrack: string;
-  onPlayPauseTrack: (trackId: string, startPositionMs?: number) => void;
-  duration: number;
+  scURL: string;
+  selectedURL: string;
+  setSelectedURL: Dispatch<SetStateAction<string>>;
+  duration?: number; // seconds
+  progress?: number; // seconds
+  isPlaying: boolean;
+  setIsPlaying: Dispatch<SetStateAction<boolean>>;
+  seekTo: (position: number, type: "seconds" | "fraction") => void;
+  isReady: boolean;
+  setIsReady: Dispatch<SetStateAction<boolean>>;
 }
 
 export interface Track {
   title: string;
   link: string;
   artworkSource: StaticImageData;
+  // SoundCloud URL
+  scURL: string;
 }
 
 export enum SongStates {

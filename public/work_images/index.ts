@@ -7,6 +7,9 @@ import InterCodesTeamCircleImage2 from "./inter_codes2.jpg";
 import NervesCircleImage from "./nerves.jpg";
 import ProfessionalCircleImage from "./professional.jpg";
 import ShadesOfGreenCircleImage from "./shades_of_green2.jpg";
+import ValenceLogoCircleImage from "./valence_logo.jpg";
+import SpaceflightLogoCircleImage from "./spaceflight_logo2.jpg";
+import HSFLogoCircleImage from "./hsf_logo.jpg";
 
 export {
   CLabsLogoCircleImage,
@@ -18,4 +21,7 @@ export {
   NervesCircleImage,
   ProfessionalCircleImage,
   ShadesOfGreenCircleImage,
+  ValenceLogoCircleImage,
+  SpaceflightLogoCircleImage,
+  HSFLogoCircleImage,
 };

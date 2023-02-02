@@ -1,0 +1,23 @@
+@use "../../styles/base.module.scss";
+$spotifyGreen: #1db954;
+$soundcloudOrange: #ff7700;
+$bandcampBlue: #477987;
+
+.musicLink {
+  transition: all 0.2s ease;
+  font-size: 2em;
+  float: right;
+  margin-right: 10px;
+}
+
+.soundcloudLink:hover {
+  color: $soundcloudOrange;
+}
+
+.spotifyLink:hover {
+  color: $spotifyGreen;
+}
+
+.bandcampLink:hover {
+  color: $bandcampBlue;
+}

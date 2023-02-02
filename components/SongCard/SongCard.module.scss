@@ -1,7 +1,4 @@
 @use "../../styles/base.module.scss";
-$spotifyGreen: #1db954;
-$soundcloudOrange: #ff7700;
-$bandcampBlue: #477987;
 
 .songBox {
   @include base.halfSecondEase;
@@ -12,6 +9,8 @@ $bandcampBlue: #477987;
 .albumArt {
   @include base.halfSecondEase;
   width: 100%;
+  width: auto;
+  height: auto;
 }
 
 .songCaption {
@@ -21,25 +20,6 @@ $bandcampBlue: #477987;
   transition: all 0.5s ease;
   color: white;
   font-size: 14px;
-}
-
-.musicLink {
-  transition: all 0.2s ease;
-  font-size: 2em;
-  float: right;
-  margin-right: 10px;
-}
-
-.soundcloudLink:hover {
-  color: $soundcloudOrange;
-}
-
-.spotifyLink:hover {
-  color: $spotifyGreen;
-}
-
-.bandcampLink:hover {
-  color: $bandcampBlue;
 }
 
 .songTitle {
@@ -68,6 +48,7 @@ $bandcampBlue: #477987;
 }
 
 .loadingIcon {
+  @extend .playIcon;
   top: -27px;
   left: -30px;
 }
@@ -79,7 +60,6 @@ $bandcampBlue: #477987;
 .sliderContainer {
   @include base.halfSecondEase;
   padding: 0 10px;
-  margin-top: -20px;
 }
 
 .timeDisplay {

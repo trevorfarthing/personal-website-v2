@@ -1,85 +1,98 @@
-import Link from "next/link";
 import styles from "./SongCard.module.scss";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSpotify, faSoundcloud, faBandcamp } from "@fortawesome/free-brands-svg-icons";
 import { faPlay, faPause, faSpinner } from "@fortawesome/free-solid-svg-icons";
 import { Box, Slider, styled, Typography } from "@mui/material";
-import { linkTypes, formatDuration } from "../../utils/music";
-import { forwardRef, useEffect, useState } from "react";
+import { formatDuration } from "../../utils/music";
+import { useEffect, useState, forwardRef } from "react";
 import { boxStyleOverrides, sliderStyleOverrides } from "./style-overrides";
 import { SongCardProps, SongState, SongStates } from "../../types/music-types";
+import SongIconLink from "../SongIconLink/SongIconLink";
 
-const IconLink = ({ linkType, link }: { linkType: string; link: string }) => {
-  const linkClasses = {
-    [linkTypes.spotify]: styles.spotifyLink,
-    [linkTypes.soundcloud]: styles.soundcloudLink,
-    [linkTypes.bandcamp]: styles.bandcampLink,
-  };
-  return (
-    <Link href={link} legacyBehavior>
-      <a className={`${styles.musicLink} ${linkClasses[linkType]}`}>
-        {
-          {
-            [linkTypes.spotify]: <FontAwesomeIcon icon={faSpotify} />,
-            [linkTypes.soundcloud]: <FontAwesomeIcon icon={faSoundcloud} />,
-            [linkTypes.bandcamp]: <FontAwesomeIcon icon={faBandcamp} />,
-          }[linkType]
-        }
-      </a>
-    </Link>
-  );
-};
-
-const SongCard = forwardRef(function SongCard(
-  { albumArtSource, songTitle, externalLink, id, selectedTrack, onPlayPauseTrack, duration }: SongCardProps,
-  scPlayer: any,
-) {
+const SongCard = forwardRef(function SongCard({
+  albumArtSource,
+  songTitle,
+  externalLink,
+  selectedURL,
+  setSelectedURL,
+  duration,
+  progress,
+  scURL,
+  isPlaying,
+  setIsPlaying,
+  seekTo,
+  isReady,
+  setIsReady,
+}: SongCardProps) {
   const [playButtonStyles, setPlayButtonStyles] = useState({ opacity: 0 });
-  const [sliderStyles, setSliderStyles] = useState({ marginTop: -20 });
-  const [timeDisplayStyles, setTimeDisplayStyles] = useState({ opacity: 0 });
-  // Recorded in seconds
-  const [playbackPosition, setPlaybackPosition] = useState(0);
-  // Is song playing, paused, or loading
+  // Is track playing, paused, or loading
   const [songState, setSongState] = useState<SongState>(SongStates.PAUSED);
+  // Stores duration for this track only (in seconds).
+  const [internalDuration, setInternalDuration] = useState(0);
+  // Tracks progress for this track only (in seconds).
+  const [internalProgress, setInternalProgress] = useState(0);
+  // If track is loading. Usually set when song is being loaded into player, before isReady.
+  const [isLoading, setIsLoading] = useState(false);
 
   // Show/hide the play button and time display on hover
   const onMouseEnterSongBox = () => {
     setPlayButtonStyles({ opacity: 1 });
-    setSliderStyles({ marginTop: 0 });
-    setTimeDisplayStyles({ opacity: 1 });
   };
   const onMouseLeaveSongBox = () => {
     setPlayButtonStyles({ opacity: 0 });
-    setSliderStyles({ marginTop: -20 });
-    setTimeDisplayStyles({ opacity: 0 });
   };
 
   const handleTogglePlaySong = () => {
-    if (songState === SongStates.PLAYING) {
-      onPlayPauseTrack("");
+    if (selectedURL === scURL) {
+      setIsPlaying(!isPlaying);
     } else {
-      onPlayPauseTrack(id, playbackPosition);
+      setIsPlaying(false);
+      setIsReady(false);
+      setSelectedURL(scURL);
+      setIsLoading(true);
     }
   };
 
-  // When the selectedTrack changes, if it matches this song, update the state
+  // When the selectedTrack changes, update the state
   useEffect(() => {
-    if (selectedTrack === id) {
+    if (selectedURL === scURL && isPlaying) {
       setSongState(SongStates.PLAYING);
+    } else if (selectedURL === scURL && isLoading) {
+      setSongState(SongStates.LOADING);
     } else {
       setSongState(SongStates.PAUSED);
     }
-  }, [selectedTrack, setSongState, id]);
+  }, [selectedURL, setSongState, scURL, isPlaying, isLoading]);
 
-  // When the PLAY_PROGRESS event occurs, update the slider
+  // Set duration
   useEffect(() => {
-    if (typeof window !== "undefined" && window.SC) {
-      // scPlayerCopy?.bind(window.SC.Widget.Events.PLAY_PROGRESS, (progress: any) => {
-      //   console.log(progress);
-      // });
+    if (duration) {
+      setInternalDuration(duration);
     }
-  }, []);
+  }, [duration]);
+
+  // Set progress
+  useEffect(() => {
+    if (progress && isPlaying) {
+      console.log("setting internal progress to " + progress);
+      setInternalProgress(progress);
+    }
+  }, [progress, isPlaying]);
+
+  // Once player is ready, seek to the progress and play
+  useEffect(() => {
+    if (isReady && selectedURL === scURL) {
+      seekTo(internalProgress, "seconds");
+      setIsPlaying(true);
+      setIsReady(false);
+      setIsLoading(false);
+    }
+  }, [isReady, selectedURL, internalProgress, scURL, seekTo, setIsPlaying, setIsReady]);
+
+  const onSliderChange = (event: Event, value: number | number[]) => {
+    setInternalProgress(value as number);
+    seekTo(value as number, "seconds");
+  };
 
   const TinyText = styled(Typography)({
     fontSize: "0.75rem",
@@ -101,26 +114,25 @@ const SongCard = forwardRef(function SongCard(
       <div className={styles.playButton} style={playButtonStyles} onClick={handleTogglePlaySong}>
         <FontAwesomeIcon
           icon={
-            { [SongStates.PAUSED]: faPlay, [SongStates.PLAYING]: faPause, [SongStates.LOADING]: faSpinner }[songState]
+            { [SongStates.PAUSED]: faPlay, [SongStates.LOADING]: faSpinner, [SongStates.PLAYING]: faPause }[songState]
           }
-          id={id}
-          className={styles.playIcon}
+          className={`${songState === SongStates.LOADING ? ` fa-spin ${styles.loadingIcon}` : styles.playIcon}`}
         />
         <div className={styles.circleSlider}></div>
       </div>
-      <Box className={styles.timeDisplay} sx={boxStyleOverrides} style={timeDisplayStyles}>
-        <TinyText>{formatDuration(playbackPosition)}</TinyText>
-        <TinyText>-{formatDuration(duration - playbackPosition)}</TinyText>
+      <Box className={styles.timeDisplay} sx={boxStyleOverrides}>
+        <TinyText>{formatDuration(internalProgress)}</TinyText>
+        {internalDuration ? <TinyText>-{formatDuration(internalDuration - internalProgress)}</TinyText> : null}
       </Box>
-      <div className={styles.sliderContainer} style={sliderStyles}>
+      <div className={styles.sliderContainer}>
         <Slider
           aria-label="time-indicator"
           size="small"
-          value={playbackPosition}
+          value={internalProgress}
           min={0}
           step={1}
-          max={duration}
-          onChange={(_, value) => setPlaybackPosition(value as number)}
+          max={internalDuration}
+          onChange={onSliderChange}
           className={styles.slider}
           sx={sliderStyleOverrides}
         />
@@ -129,7 +141,7 @@ const SongCard = forwardRef(function SongCard(
         <Typography component="span" variant="body2" className={styles.songTitle}>
           {songTitle}
         </Typography>
-        <IconLink linkType={externalLink.linkType} link={externalLink.link} />
+        <SongIconLink linkType={externalLink.linkType} link={externalLink.link} />
       </div>
     </div>
   );
