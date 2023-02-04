@@ -42,13 +42,13 @@ export const trackList: Track[] = [
   {
     title: "Daylight",
     link: "https://soundcloud.com/tfar/daylight",
-    artworkSource: DaylightImage,
+    artworkSource: "/album_artwork/daylight.jpg",
     scURL: "https://soundcloud.com/tfar/daylight",
   },
   {
     title: "Wolves (Remix)",
     link: "https://soundcloud.com/tfar/selena-gomez-x-marshmello-wolves-nerves-remix",
-    artworkSource: WolvesImage,
+    artworkSource: WolvesImage.src,
     scURL: "https://soundcloud.com/tfar/selena-gomez-x-marshmello-wolves-nerves-remix",
   },
   {

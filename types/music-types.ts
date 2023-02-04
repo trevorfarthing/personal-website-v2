@@ -7,7 +7,7 @@ export interface ExternalSongLink {
 }
 
 export interface SongCardProps {
-  albumArtSource: StaticImageData;
+  albumArtSource: StaticImageData | string;
   songTitle: string;
   externalLink: ExternalSongLink;
   scURL: string;
@@ -27,7 +27,7 @@ export interface SongCardProps {
 export interface Track {
   title: string;
   link: string;
-  artworkSource: StaticImageData;
+  artworkSource: StaticImageData | string;
   // SoundCloud URL
   scURL: string;
 }
