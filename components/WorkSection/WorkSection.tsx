@@ -13,7 +13,7 @@ const WorkSection = ({
   sectionContent,
 }: {
   sectionTitle: string;
-  images: StaticImageData[];
+  images: StaticImageData[] | string[];
   sectionContent: React.ReactNode;
 }) => {
   const [isCollapsed, setIsCollapsed] = useState(true);
