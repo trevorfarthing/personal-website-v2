@@ -25,3 +25,12 @@
 .navLink:hover:after {
   @include base.underlineHover;
 }
+
+.musicLink {
+  font-size: 1.25rem;
+  padding: 0;
+}
+
+.musicLink:hover {
+  cursor: pointer;
+}

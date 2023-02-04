@@ -1,0 +1,24 @@
+@use "../../styles/base.module.scss";
+
+.skillsSection {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.icon {
+  position: relative;
+  top: 4px;
+  margin-right: 2 * base.$spacing;
+  color: base.$secondary-color;
+  font-size: 1.5rem;
+}
+
+.sectionTitle {
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.skillsGridContainer {
+  margin: 2rem auto 0 auto;
+}
