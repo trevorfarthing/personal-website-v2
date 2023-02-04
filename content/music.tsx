@@ -1,25 +1,23 @@
 import { Track } from "../types/music-types";
-import {
-  ShadesOfGreenImage,
-  DaylightImage,
-  WolvesImage,
-  MementoImage,
-  FetishImage,
-  DMsImage,
-  LastChanceImage,
-  FeelingThisImage,
-  MyOwnWorstEnemyImage,
-  HeavyImage,
-  DungeonImage,
-  CompetitionMixImage,
-  BoysOfSummerImage,
-  PumpkinSpiceMixImage,
-  ChillaxMixImage,
-  ClocksImage,
-  LostAtSeaImage,
-  HandsOfFoolsImage,
-  SonanceImage,
-} from "../public/album_artwork/index";
+import ShadesOfGreenImage from "../public/album_artwork/shades_of_green.jpg";
+import DaylightImage from "../public/album_artwork/daylight.jpg";
+import WolvesImage from "../public/album_artwork/wolves.jpg";
+import MementoImage from "../public/album_artwork/memento.jpg";
+import FetishImage from "../public/album_artwork/fetish.jpg";
+import DMsImage from "../public/album_artwork/dms.jpg";
+import LastChanceImage from "../public/album_artwork/lastchance.jpg";
+import FeelingThisImage from "../public/album_artwork/feeling_this.jpg";
+import MyOwnWorstEnemyImage from "../public/album_artwork/my_own_worst_enemy.jpg";
+import HeavyImage from "../public/album_artwork/heavy.jpg";
+import DungeonImage from "../public/album_artwork/dungeon.jpeg";
+import CompetitionMixImage from "../public/album_artwork/competition_mix.jpg";
+import BoysOfSummerImage from "../public/album_artwork/boys_of_summer.jpeg";
+import PumpkinSpiceMixImage from "../public/album_artwork/pumpkin_spice_mix.jpg";
+import ChillaxMixImage from "../public/album_artwork/chillax_mix.jpg";
+import ClocksImage from "../public/album_artwork/clocks.jpg";
+import LostAtSeaImage from "../public/album_artwork/lost_at_sea.jpg";
+import HandsOfFoolsImage from "../public/album_artwork/hands_of_fools.jpg";
+import SonanceImage from "../public/album_artwork/sonance.jpg";
 
 // TODO: Move this to a DB and file storage for images. Also remove some tracks and add newer ones.
 export const trackList: Track[] = [
