@@ -1,9 +1,14 @@
-- Fix issue with playing songs on Safari - show the actual player and see that it loads the widget then immediately pauses. Due to issues with autoplay in Safari. Can I somehow use a playlist as the URL for the player and then get access to underlying widget to skip tracks? Or
-- Reupload Boys of Summer remix to SC
+# TODO
 
-- Make sure everything is responsive for mobile
+- Due to issues with autoplay on Safari, on first load of songs page, will need to press play button twice on first track selected.
+
 - Setup Github Actions to new S3 bucket and move where my domain name is pointing to
 - Remove some old song cards and add new ones
 
-- Fix remaining console warnings/errors
+# Ideas
+
 - Try dynamic import for iFrames to optimize - wrap in separate component
+- Collapse button on work sections
+- Specify sizes prop on all images to optimize
+- Click on images in work section to bring up a larger picture viewer
+- Fix any remaining console warnings/errors

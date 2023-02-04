@@ -54,13 +54,13 @@ const Home: NextPage = () => {
       <main className={styles.main}>
         <Grid container spacing={2} alignItems="center" justifyContent="center">
           <Fade in={true} timeout={transitionTimeout}>
-            <Grid item xs={6}>
+            <Grid item xs={12} lg={6}>
               <div className={styles.imageContainer}>
                 <Image src={profilePic} alt="Profile picture" className={styles.profileImage} fill priority />
               </div>
             </Grid>
           </Fade>
-          <Grid item xs={6}>
+          <Grid item xs={12} lg={6}>
             <Typography variant="h2" className={styles.heading}>
               {headingText}
               {isHeadingCursorVisible && <Cursor />}

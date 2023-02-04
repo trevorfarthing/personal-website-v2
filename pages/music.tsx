@@ -24,34 +24,32 @@ const Music: NextPage = () => {
   const [selectedURL, setSelectedURL] = useState("");
   // If player is playing or not
   const [isPlaying, setIsPlaying] = useState(false);
-  // Duration of selected track in seconds
-  const [selectedDuration, setSelectedDuration] = useState(0);
   // Progress of selected track in seconds
   const [selectedProgress, setSelectedProgress] = useState(0);
   // Is player ready
   const [isReady, setIsReady] = useState(false);
+  // Super janky fix for weird React Player behavior.
+  // Tracking this so we can avoid the first incorrect progress event from the prior track.
+  const [progressEventCounter, setProgressEventCounter] = useState(0);
 
   const onPlay = () => {
-    console.log("playing");
+    console.log("PLAY");
   };
   const onReady = () => {
     setIsReady(true);
   };
-  const onBuffer = () => {
-    console.log("buffering");
-  };
-
-  const onDuration = (duration: number) => {
-    setSelectedDuration(duration);
+  const onEnded = () => {
+    setIsPlaying(false);
   };
 
   const onProgress = (progress: any) => {
-    console.log("on progress " + progress.playedSeconds);
-    setSelectedProgress(progress.playedSeconds);
+    if (isPlaying) {
+      setSelectedProgress(progress.playedSeconds);
+      setProgressEventCounter((currentCounter) => currentCounter + 1);
+    }
   };
 
   const seekTo = (position: number, type: "seconds" | "fraction") => {
-    console.log("seek to " + position);
     player.current?.seekTo(position, type);
   };
 
@@ -62,6 +60,9 @@ const Music: NextPage = () => {
         <meta name="description" content="Music by Trevor Farthing." />
       </Head>
       <main className={styles.main}>
+        <Typography variant="h3" className={styles.pageTitle}>
+          Music
+        </Typography>
         <Typography variant="body1">{"Some tracks I've produced or recorded on."}</Typography>
         <Divider variant="fullWidth" className={styles.divider} />
         <Grid container spacing={4} alignItems="center" justifyContent="center" className={styles.musicContainer}>
@@ -82,8 +83,10 @@ const Music: NextPage = () => {
                       seekTo={seekTo}
                       isReady={isReady}
                       setIsReady={setIsReady}
+                      progressEventCounter={progressEventCounter}
+                      setProgressEventCounter={setProgressEventCounter}
                       {...(selectedURL === track.scURL ? { progress: selectedProgress } : {})}
-                      {...(selectedURL === track.scURL ? { duration: selectedDuration } : {})}
+                      {...(selectedURL === track.scURL ? { duration: player.current?.getDuration() } : {})}
                     />
                   </div>
                 </Grid>
@@ -95,11 +98,10 @@ const Music: NextPage = () => {
           url={selectedURL}
           playing={isPlaying}
           volume={1}
-          onPlay={onPlay}
           onReady={onReady}
-          onBuffer={onBuffer}
+          onEnded={onEnded}
+          onPlay={onPlay}
           className={styles.musicPlayer}
-          onDuration={onDuration}
           onProgress={onProgress}
           playerRef={player}
         />

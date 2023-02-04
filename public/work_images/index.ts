@@ -1,15 +1,15 @@
-import CLabsLogoCircleImage from "./c-labs_logo2.jpg";
-import GermanyCircleImage from "./germany.jpg";
-import GuitarCircleImage from "./guitar.jpg";
-import InterCodesLogoCircleImage from "./inter_codes_logo.jpg";
-import InterCodesTeamCircleImage from "./inter_codes.jpg";
-import InterCodesTeamCircleImage2 from "./inter_codes2.jpg";
-import NervesCircleImage from "./nerves.jpg";
-import ProfessionalCircleImage from "./professional.jpg";
-import ShadesOfGreenCircleImage from "./shades_of_green2.jpg";
-import ValenceLogoCircleImage from "./valence_logo.jpg";
-import SpaceflightLogoCircleImage from "./spaceflight_logo2.jpg";
-import HSFLogoCircleImage from "./hsf_logo.jpg";
+import CLabsLogoCircleImage from "./c-labs_logo2.png";
+import GermanyCircleImage from "./germany.png";
+import GuitarCircleImage from "./guitar.png";
+import InterCodesLogoCircleImage from "./inter_codes_logo.png";
+import InterCodesTeamCircleImage from "./inter_codes.png";
+import InterCodesTeamCircleImage2 from "./inter_codes2.png";
+import NervesCircleImage from "./nerves.png";
+import ProfessionalCircleImage from "./professional.png";
+import ShadesOfGreenCircleImage from "./shades_of_green2.png";
+import ValenceLogoCircleImage from "./valence_logo.png";
+import SpaceflightLogoCircleImage from "./spaceflight_logo.png";
+import HSFLogoCircleImage from "./hsf_logo.png";
 
 export {
   CLabsLogoCircleImage,

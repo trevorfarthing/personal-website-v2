@@ -7,6 +7,7 @@ import { useState } from "react";
 import styles from "../styles/videos.module.scss";
 
 const About: NextPage = () => {
+  // Supposedly autoPlay parameter improves thumbnail quality. Not sure if it actually does anything.
   const videos = [
     "https://www.youtube.com/embed/OQK89OHH2mI?autoPlay=1",
     "https://www.youtube.com/embed/uv6omayGEIg?autoPlay=1",
@@ -39,6 +40,9 @@ const About: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
+        <Typography variant="h3" className={styles.pageTitle}>
+          Videos
+        </Typography>
         {isLoading ? (
           <>
             <FontAwesomeIcon icon={faSpinner} className={`fa-spin ${styles.loadingIcon}`} />

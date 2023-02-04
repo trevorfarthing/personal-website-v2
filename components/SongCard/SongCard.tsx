@@ -8,6 +8,7 @@ import { useEffect, useState, forwardRef } from "react";
 import { boxStyleOverrides, sliderStyleOverrides } from "./style-overrides";
 import { SongCardProps, SongState, SongStates } from "../../types/music-types";
 import SongIconLink from "../SongIconLink/SongIconLink";
+import { isSafari } from "react-device-detect";
 
 const SongCard = forwardRef(function SongCard({
   albumArtSource,
@@ -23,6 +24,8 @@ const SongCard = forwardRef(function SongCard({
   seekTo,
   isReady,
   setIsReady,
+  progressEventCounter,
+  setProgressEventCounter,
 }: SongCardProps) {
   const [playButtonStyles, setPlayButtonStyles] = useState({ opacity: 0 });
   // Is track playing, paused, or loading
@@ -49,6 +52,7 @@ const SongCard = forwardRef(function SongCard({
       setIsPlaying(false);
       setIsReady(false);
       setSelectedURL(scURL);
+      setProgressEventCounter(0);
       setIsLoading(true);
     }
   };
@@ -69,15 +73,14 @@ const SongCard = forwardRef(function SongCard({
     if (duration) {
       setInternalDuration(duration);
     }
-  }, [duration]);
+  }, [duration, internalDuration]);
 
   // Set progress
   useEffect(() => {
-    if (progress && isPlaying) {
-      console.log("setting internal progress to " + progress);
+    if (progress && isPlaying && progressEventCounter > 1) {
       setInternalProgress(progress);
     }
-  }, [progress, isPlaying]);
+  }, [progress, isPlaying, progressEventCounter]);
 
   // Once player is ready, seek to the progress and play
   useEffect(() => {
@@ -108,8 +111,8 @@ const SongCard = forwardRef(function SongCard({
         className={styles.albumArt}
         alt={`Album artwork for the song ${songTitle}`}
         src={albumArtSource}
-        width={240}
-        height={240}
+        width={500}
+        height={500}
       />
       <div className={styles.playButton} style={playButtonStyles} onClick={handleTogglePlaySong}>
         <FontAwesomeIcon
@@ -122,7 +125,9 @@ const SongCard = forwardRef(function SongCard({
       </div>
       <Box className={styles.timeDisplay} sx={boxStyleOverrides}>
         <TinyText>{formatDuration(internalProgress)}</TinyText>
-        {internalDuration ? <TinyText>-{formatDuration(internalDuration - internalProgress)}</TinyText> : null}
+        {internalDuration && !isLoading ? (
+          <TinyText>-{formatDuration(internalDuration - internalProgress)}</TinyText>
+        ) : null}
       </Box>
       <div className={styles.sliderContainer}>
         <Slider

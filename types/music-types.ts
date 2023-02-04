@@ -20,6 +20,8 @@ export interface SongCardProps {
   seekTo: (position: number, type: "seconds" | "fraction") => void;
   isReady: boolean;
   setIsReady: Dispatch<SetStateAction<boolean>>;
+  progressEventCounter: number;
+  setProgressEventCounter: Dispatch<SetStateAction<number>>;
 }
 
 export interface Track {

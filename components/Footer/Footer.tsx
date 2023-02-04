@@ -11,7 +11,7 @@ const Footer = () => {
     instagram: "https://instagram.com/trevor_farthing",
     youTube: "https://www.youtube.com/user/tfavre",
   };
-  const footerClass = router.pathname === "/" ? styles.fixedFooter : styles.footer;
+  const footerClass = styles.footer; //router.pathname === "/" ? styles.fixedFooter : styles.footer;
 
   return (
     <footer className={footerClass}>

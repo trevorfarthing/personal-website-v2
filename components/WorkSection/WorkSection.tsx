@@ -2,7 +2,7 @@
 import styles from "./WorkSection.module.scss";
 import React, { useEffect, useState } from "react";
 import Image, { StaticImageData } from "next/image";
-import { Collapse, Divider, Fade, Grow, Typography } from "@mui/material";
+import { Collapse, Divider, Fade, Grid, Grow, Typography } from "@mui/material";
 
 const transitionTimeout = 1500;
 const transitionDelay = 250;
@@ -27,7 +27,7 @@ const WorkSection = ({
   return (
     <section>
       <div className={styles.projSectionInfo}>
-        <div className={styles.projectPhotos}>
+        <Grid container className={styles.projectPhotos}>
           {images.map((image, index) => (
             <Grow
               in={true}
@@ -35,12 +35,14 @@ const WorkSection = ({
               style={{ transitionDelay: `${index * transitionDelay}ms` }}
               key={index}
             >
-              <div className={styles.imageContainer}>
-                <Image src={image} alt="Work image" className={styles.projectPhoto} fill />
-              </div>
+              <Grid item xs={4} className={styles.imageContainerWrapper}>
+                <div className={styles.imageContainer}>
+                  <Image src={image} alt="Work image" className={styles.projectPhoto} fill />
+                </div>
+              </Grid>
             </Grow>
           ))}
-        </div>
+        </Grid>
         <Fade in={true} timeout={transitionTimeout}>
           <div>
             <Typography variant="h4" className={styles.projSectionTitle}>
