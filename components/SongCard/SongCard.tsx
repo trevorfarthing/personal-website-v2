@@ -8,7 +8,7 @@ import { useEffect, useState, forwardRef } from "react";
 import { boxStyleOverrides, sliderStyleOverrides } from "./style-overrides";
 import { SongCardProps, SongState, SongStates } from "../../types/music-types";
 import SongIconLink from "../SongIconLink/SongIconLink";
-import { isSafari } from "react-device-detect";
+// import { isSafari } from "react-device-detect";
 
 const SongCard = forwardRef(function SongCard({
   albumArtSource,
