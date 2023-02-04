@@ -1,22 +1,10 @@
 import { StaticImageData } from "next/image";
 import styles from "../styles/base.module.scss";
 import React from "react";
-import CLabsLogoCircleImage from "../public/work_images/c-labs_logo2.png";
-import GermanyCircleImage from "../public/work_images/germany.png";
-import GuitarCircleImage from "../public/work_images/guitar.png";
-import InterCodesLogoCircleImage from "../public/work_images/inter_codes_logo.png";
-import InterCodesTeamCircleImage from "../public/work_images/inter_codes.png";
-import InterCodesTeamCircleImage2 from "../public/work_images/inter_codes2.png";
-import NervesCircleImage from "../public/work_images/nerves.png";
-import ProfessionalCircleImage from "../public/work_images/professional.png";
-import ShadesOfGreenCircleImage from "../public/work_images/shades_of_green2.png";
-import ValenceLogoCircleImage from "../public/work_images/valence_logo.png";
-import SpaceflightLogoCircleImage from "../public/work_images/spaceflight_logo.png";
-import HSFLogoCircleImage from "../public/work_images/hsf_logo.png";
 
 interface WorkSection {
   title: string;
-  images: StaticImageData[];
+  images: StaticImageData[] | string[];
   content: React.ReactNode;
 }
 
@@ -24,7 +12,7 @@ interface WorkSection {
 export const workSections: WorkSection[] = [
   {
     title: "Valence",
-    images: [SpaceflightLogoCircleImage, ValenceLogoCircleImage, HSFLogoCircleImage],
+    images: ["/work_images/spaceflight_logo.png", "/work_images/spaceflight_logo.png", "/work_images/hsf_logo.png"],
     content: (
       <div>
         A little less than a year into the pandemic in 2020, I took on a new position as a Software Engineer at Valence,
@@ -55,7 +43,7 @@ export const workSections: WorkSection[] = [
   },
   {
     title: "C-Labs",
-    images: [GermanyCircleImage, CLabsLogoCircleImage, ProfessionalCircleImage],
+    images: ["/work_images/germany.png", "/work_images/c-labs_logo2.png", "/work_images/professional.png"],
     content: (
       <div>
         I began working at C-Labs as a software development intern during the summer of 2016. After my graduation in
@@ -84,7 +72,7 @@ export const workSections: WorkSection[] = [
   },
   {
     title: "Inter.Codes",
-    images: [InterCodesTeamCircleImage, InterCodesLogoCircleImage, InterCodesTeamCircleImage2],
+    images: ["/work_images/inter_codes.png", "/work_images/inter_codes_logo.png", "/work_images/inter_codes2.png"],
     content: (
       <div>
         At the beginning of September 2017, I began working with three other developers on Inter.Codes, our
@@ -107,7 +95,7 @@ export const workSections: WorkSection[] = [
   },
   {
     title: "Music & Video",
-    images: [NervesCircleImage, GuitarCircleImage, ShadesOfGreenCircleImage],
+    images: ["/work_images/nerves.png", "/work_images/guitar.png", "/work_images/shades_of_green2.png"],
     content: (
       <div>
         Since I was young, I&apos;ve always had a passion for filming and editing video, as well as producing music. In
