@@ -1,20 +1,18 @@
 import { StaticImageData } from "next/image";
 import styles from "../styles/base.module.scss";
 import React from "react";
-import {
-  CLabsLogoCircleImage,
-  GermanyCircleImage,
-  GuitarCircleImage,
-  HSFLogoCircleImage,
-  InterCodesLogoCircleImage,
-  InterCodesTeamCircleImage,
-  InterCodesTeamCircleImage2,
-  NervesCircleImage,
-  ProfessionalCircleImage,
-  ShadesOfGreenCircleImage,
-  SpaceflightLogoCircleImage,
-  ValenceLogoCircleImage,
-} from "../public/work_images/index";
+import CLabsLogoCircleImage from "../public/work_images/c-labs_logo2.png";
+import GermanyCircleImage from "../public/work_images/germany.png";
+import GuitarCircleImage from "../public/work_images/guitar.png";
+import InterCodesLogoCircleImage from "../public/work_images/inter_codes_logo.png";
+import InterCodesTeamCircleImage from "../public/work_images/inter_codes.png";
+import InterCodesTeamCircleImage2 from "../public/work_images/inter_codes2.png";
+import NervesCircleImage from "../public/work_images/nerves.png";
+import ProfessionalCircleImage from "../public/work_images/professional.png";
+import ShadesOfGreenCircleImage from "../public/work_images/shades_of_green2.png";
+import ValenceLogoCircleImage from "../public/work_images/valence_logo.png";
+import SpaceflightLogoCircleImage from "../public/work_images/spaceflight_logo.png";
+import HSFLogoCircleImage from "../public/work_images/hsf_logo.png";
 
 interface WorkSection {
   title: string;
