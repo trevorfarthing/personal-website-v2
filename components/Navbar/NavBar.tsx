@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Grid, Menu, MenuItem, Typography } from "@mui/material";
-import styles from "./NavBar.module.scss";
+import styles from "./Navbar.module.scss";
 import { useState } from "react";
 
 const NavBar = () => {
