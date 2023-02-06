@@ -12,7 +12,7 @@ interface WorkSection {
 export const workSections: WorkSection[] = [
   {
     title: "Valence",
-    images: ["/work_images/spaceflight_logo.png", "/work_images/spaceflight_logo.png", "/work_images/hsf_logo.png"],
+    images: ["/work_images/valence_logo.png", "/work_images/spaceflight_logo.png", "/work_images/hsf_logo.png"],
     content: (
       <div>
         A little less than a year into the pandemic in 2020, I took on a new position as a Software Engineer at Valence,
