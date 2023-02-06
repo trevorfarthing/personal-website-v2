@@ -7,12 +7,10 @@
 }
 
 .pageTitle {
-  margin-bottom: 1rem;
+  margin-bottom: 1rem !important;
 }
 
 .divider {
-  background-color: base.$secondary-color;
-  border-width: 1px;
   margin-bottom: base.$spacing * 8;
 }
 

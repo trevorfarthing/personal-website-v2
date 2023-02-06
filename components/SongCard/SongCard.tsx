@@ -120,6 +120,7 @@ const SongCard = forwardRef(function SongCard({
             { [SongStates.PAUSED]: faPlay, [SongStates.LOADING]: faSpinner, [SongStates.PLAYING]: faPause }[songState]
           }
           className={`${songState === SongStates.LOADING ? ` fa-spin ${styles.loadingIcon}` : styles.playIcon}`}
+          size="1x"
         />
         <div className={styles.circleSlider}></div>
       </div>
