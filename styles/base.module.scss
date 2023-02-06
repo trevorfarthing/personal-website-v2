@@ -29,7 +29,7 @@ $max-width: 1920px;
 
 .secondaryDivider {
   background-color: $secondary-color;
-  border-width: 1px;
+  border-width: 1px !important;
 }
 
 .inlineLink {

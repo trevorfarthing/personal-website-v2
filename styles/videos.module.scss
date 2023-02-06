@@ -7,7 +7,7 @@
 }
 
 .pageTitle {
-  margin-bottom: 1rem;
+  margin-bottom: 1rem !important;
 }
 
 .iFrameContainer {
@@ -30,12 +30,7 @@
 .videoBlock {
   text-align: center;
   position: relative;
-}
-
-.divider {
-  background-color: base.$secondary-color;
-  border-width: 1px;
-  margin-bottom: base.$spacing * 8;
+  margin-top: base.$spacing * 8 !important;
 }
 
 .loadingIcon {

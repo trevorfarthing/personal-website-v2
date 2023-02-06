@@ -53,7 +53,7 @@ const About: NextPage = () => {
         ) : (
           <Typography variant="body1">{"Guitar covers, music videos, and the like."}</Typography>
         )}
-        <Divider variant="fullWidth" className={styles.divider} />
+        <Divider variant="fullWidth" className={styles.secondaryDivider} />
         <div className={styles.videoBlock}>
           {videos.map((video, index) => (
             <div className={styles.iFrameContainer} key={index}>

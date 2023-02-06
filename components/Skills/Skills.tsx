@@ -72,7 +72,7 @@ const Skills = () => {
       <Grid container spacing={3} className={styles.skillsGridContainer}>
         {skills.map((skill, index) => (
           <Grid item xs={6} sm={4} key={index}>
-            <>{<FontAwesomeIcon icon={skill.icon as any} className={styles.icon} />}</>
+            <>{<FontAwesomeIcon icon={skill.icon as any} className={styles.icon} size="1x" />}</>
             <Typography variant="body1" component="span">
               {skill.title}
             </Typography>

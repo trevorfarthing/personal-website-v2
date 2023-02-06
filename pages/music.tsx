@@ -64,7 +64,7 @@ const Music: NextPage = () => {
           Music
         </Typography>
         <Typography variant="body1">{"Some tracks I've produced or recorded on."}</Typography>
-        <Divider variant="fullWidth" className={styles.divider} />
+        <Divider variant="fullWidth" className={`${styles.divider} ${styles.secondaryDivider}`} />
         <Grid container spacing={4} alignItems="center" justifyContent="center" className={styles.musicContainer}>
           {trackList.map((track, index) => {
             return (
