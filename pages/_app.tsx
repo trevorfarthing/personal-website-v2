@@ -6,6 +6,8 @@ import CssBaseline from "@mui/material/CssBaseline";
 import theme from "../theme";
 import Layout from "../components/Layout/Layout";
 import Head from "next/head";
+import { config, dom } from "@fortawesome/fontawesome-svg-core";
+config.autoAddCss = false;
 
 const inconsolata = Inconsolata({});
 const PlayfairDisplay = Playfair_Display({});
@@ -21,6 +23,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#71cf44" />
         <meta name="msapplication-TileColor" content="#00a300" />
         <meta name="theme-color" content="#ffffff" />
+        <style>{dom.css()}</style>
       </Head>
       <ThemeProvider theme={theme}>
         <CssBaseline />

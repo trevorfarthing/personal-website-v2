@@ -23,19 +23,19 @@ export const trackList: Track[] = [
   {
     title: "Daylight",
     link: "https://soundcloud.com/tfar/daylight",
-    artworkSource: "/album_artwork/daylight.jpg",
+    artworkSource: "/album_artwork/daylight.JPG",
     scURL: "https://soundcloud.com/tfar/daylight",
   },
   {
     title: "Wolves (Remix)",
     link: "https://soundcloud.com/tfar/selena-gomez-x-marshmello-wolves-nerves-remix",
-    artworkSource: "/album_artwork/wolves.jpg",
+    artworkSource: "/album_artwork/wolves.JPG",
     scURL: "https://soundcloud.com/tfar/selena-gomez-x-marshmello-wolves-nerves-remix",
   },
   {
     title: "Memento",
     link: "https://soundcloud.com/tfar/memento",
-    artworkSource: "/album_artwork/memento.jpg",
+    artworkSource: "/album_artwork/memento.JPG",
     scURL: "https://soundcloud.com/tfar/memento",
   },
   {
@@ -47,7 +47,7 @@ export const trackList: Track[] = [
   {
     title: "DMs (#SELFIE Pt. II)",
     link: "https://soundcloud.com/tfar/dms-selfie-pt-ii",
-    artworkSource: "/album_artwork/dms.jpg",
+    artworkSource: "/album_artwork/dms.JPG",
     scURL: "https://soundcloud.com/tfar/dms-selfie-pt-ii",
   },
   {
@@ -59,13 +59,13 @@ export const trackList: Track[] = [
   {
     title: "Feeling This (Remix)",
     link: "https://soundcloud.com/tfar/feeling-this-intro",
-    artworkSource: "/album_artwork/feeling_this.jpg",
+    artworkSource: "/album_artwork/feeling_this.JPG",
     scURL: "https://soundcloud.com/tfar/feeling-this-intro",
   },
   {
     title: "My Own Worst Enemy (Remix)",
     link: "https://soundcloud.com/tfar/lit-my-own-worst-enemy-nerves-remix-1",
-    artworkSource: "/album_artwork/my_own_worst_enemy.jpg",
+    artworkSource: "/album_artwork/my_own_worst_enemy.JPG",
     scURL: "https://soundcloud.com/tfar/lit-my-own-worst-enemy-nerves-remix-1",
   },
   {
@@ -83,7 +83,7 @@ export const trackList: Track[] = [
   {
     title: "2017 Competition Mix",
     link: "https://soundcloud.com/nerves_music/2017-competition-mix",
-    artworkSource: "/album_artwork/competition_mix.jpg",
+    artworkSource: "/album_artwork/competition_mix.JPG",
     scURL: "https://soundcloud.com/nerves_music/2017-competition-mix",
   },
   {
@@ -101,13 +101,13 @@ export const trackList: Track[] = [
   {
     title: "Summer '16 Chillax Mix",
     link: "https://soundcloud.com/tfar/summer-2016-chillax-mix",
-    artworkSource: "/album_artwork/chillax_mix.jpg",
+    artworkSource: "/album_artwork/chillax_mix.JPG",
     scURL: "https://soundcloud.com/tfar/summer-2016-chillax-mix",
   },
   {
     title: "Clocks (Remix)",
     link: "https://soundcloud.com/tfar/clocks-coldplay-t-far-house-remix",
-    artworkSource: "/album_artwork/clocks.jpg",
+    artworkSource: "/album_artwork/clocks.JPG",
     scURL: "https://soundcloud.com/tfar/clocks-coldplay-t-far-house-remix",
   },
   {
