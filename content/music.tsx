@@ -3,20 +3,26 @@ import { Track } from "../types/music-types";
 // TODO: Move this to a DB and file storage for images. Also remove some tracks and add newer ones.
 export const trackList: Track[] = [
   {
+    title: "Need You (Acoustic)",
+    link: "https://open.spotify.com/track/2ZpIpABFLitS0lNMkt8TxU?si=41b2006fa7f34f3a",
+    artworkSource: "/album_artwork/need_you.jpg",
+    scURL: "https://soundcloud.com/tfar/need-you-acoustic",
+  },
+  {
     title: "Puzzle Pieces",
-    link: "https://open.spotify.com/artist/7ep0M30TYlHUVnJsDwiLGe?si=7pgd7m8ERMyG1zImlQ7cTA",
+    link: "https://open.spotify.com/track/1OPNe9a315oTYmV2bEt6XJ?si=0d2fb8be688f4742",
     artworkSource: "/album_artwork/shades_of_green.jpg",
     scURL: "https://soundcloud.com/tfar/puzzle-pieces",
   },
   {
     title: "Fly Away",
-    link: "https://open.spotify.com/artist/7ep0M30TYlHUVnJsDwiLGe?si=7pgd7m8ERMyG1zImlQ7cTA",
+    link: "https://open.spotify.com/track/4KL3SWlBVItYE3I34eWPqg?si=b9fd6d08fd8349e1",
     artworkSource: "/album_artwork/shades_of_green.jpg",
     scURL: "https://soundcloud.com/tfar/fly-away",
   },
   {
     title: "Dawn",
-    link: "https://open.spotify.com/artist/7ep0M30TYlHUVnJsDwiLGe?si=7pgd7m8ERMyG1zImlQ7cTA",
+    link: "https://open.spotify.com/track/7Dk9KNLictsoVqw9d9R2J4?si=99cadf526f1d45e3",
     artworkSource: "/album_artwork/shades_of_green.jpg",
     scURL: "https://soundcloud.com/tfar/dawn",
   },
@@ -123,16 +129,10 @@ export const trackList: Track[] = [
     scURL: "https://soundcloud.com/tfar/struck-red-hands-of-fools",
   },
   {
-    title: "Damaging",
-    link: "https://struckred.bandcamp.com/album/lost-at-sea-ep",
-    artworkSource: "/album_artwork/lost_at_sea.jpg",
-    scURL: "https://soundcloud.com/tfar/struck-red-damaging",
-  },
-  {
-    title: "Lost at Sea",
-    link: "https://struckred.bandcamp.com/album/lost-at-sea-ep",
-    artworkSource: "/album_artwork/lost_at_sea.jpg",
-    scURL: "https://soundcloud.com/tfar/struck-red-lost-at-sea",
+    title: "As Long As We Can",
+    link: "https://struckred.bandcamp.com/album/hands-of-fools-ep",
+    artworkSource: "/album_artwork/hands_of_fools.jpg",
+    scURL: "https://soundcloud.com/tfar/as-long-as-we-can",
   },
   {
     title: "She Was Mine (Cover)",

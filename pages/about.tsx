@@ -56,7 +56,7 @@ const About: NextPage = () => {
               <Slide direction="right" in={true} container={containerRef.current} timeout={transitionTimeout}>
                 <Typography variant="body1" className={styles.infoText}>
                   <WorkIcon className={styles.icon} />
-                  Valence
+                  Kopius
                 </Typography>
               </Slide>
               <Slide direction="right" in={true} container={containerRef.current} timeout={transitionTimeout}>
@@ -84,9 +84,9 @@ const About: NextPage = () => {
           <Fade in={true} timeout={transitionTimeout} style={{ transitionDelay: `${transitionDelay2}ms` }}>
             <Grid item xs={12}>
               <Typography variant="body1">
-                {`Hello, my name is Trevor!  I'm a software engineer with 4 years of experience based out of the Greater Seattle Area.
-                 I graduated with a B.S. in Computer Science from Gonzaga University and am currently working at Valence, a digital strategy, design, and engineering firm.
-                 I am passionate about writing clean and effective frontend code in React and other Javascript frameworks, but can seamlessly jump into fullstack roles.`}
+                {`Hello, my name is Trevor!  I'm a software engineer with 5 years of experience based out of the Greater Seattle Area.
+                 I graduated with a B.S. in Computer Science from Gonzaga University and am currently working at Kopius, a digital strategy, design, and engineering firm.
+                 I am passionate about writing clean and effective code in React and Node.js, and can seamlessly jump into any fullstack role.`}
               </Typography>
               <Typography variant="body1">
                 {`In my free time, I enjoy playing the guitar and producing music.  You can find some of my past work on the Music page.  Some of my other hobbies include toying around with

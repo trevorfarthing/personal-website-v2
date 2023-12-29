@@ -9,8 +9,9 @@ import styles from "../styles/videos.module.scss";
 const About: NextPage = () => {
   // Supposedly autoPlay parameter improves thumbnail quality. Not sure if it actually does anything.
   const videos = [
+    "https://www.youtube.com/embed/3gPkcUX36W0?autoPlay=1",
+    "https://www.youtube.com/embed/p4Ei07F_7WU?autoPlay=1",
     "https://www.youtube.com/embed/OQK89OHH2mI?autoPlay=1",
-    "https://www.youtube.com/embed/uv6omayGEIg?autoPlay=1",
     "https://www.youtube.com/embed/-Hpjz14QCs8?autoPlay=1",
     "https://www.youtube.com/embed/bJH-3TOVRCI?autoPlay=1",
     "https://www.youtube.com/embed/suMhsG9OrZw?autoPlay=1",
