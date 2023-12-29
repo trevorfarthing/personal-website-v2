@@ -11,11 +11,11 @@ interface WorkSection {
 // Content that will be displayed on the /work page.
 export const workSections: WorkSection[] = [
   {
-    title: "Valence",
-    images: ["/work_images/valence_logo.png", "/work_images/spaceflight_logo.png", "/work_images/hsf_logo.png"],
+    title: "Kopius",
+    images: ["/work_images/kopius_logo.png", "/work_images/spaceflight_logo.png", "/work_images/hsf_logo.png"],
     content: (
       <div>
-        A little less than a year into the pandemic in 2020, I took on a new position as a Software Engineer at Valence,
+        A little less than a year into the pandemic in 2020, I took on a new position as a Software Engineer at Kopius,
         a digital strategy, design, and engineering firm. Here I embraced new responsibilities, working as a fullstack
         developer with numerous clients ranging from Providence Health & Services to Spaceflight.
         <br />
@@ -23,17 +23,17 @@ export const workSections: WorkSection[] = [
         all-encompassing tool for mission managers to help prepare customers wishing to launch a satellite on a rocket
         owned by SpaceX (or another manufacturer). While I built the UI components using React, I also contributed to
         the construction of API endpoints with AWS Lambdas and CloudFormation. Read more about this project{" "}
-        <a href="https://valencelevel.com/case-studies/spaceflight-mission-control/" className={styles.inlineLink}>
+        <a href="https://kopiustech.com/case-studies/spaceflight-mission-control/" className={styles.inlineLink}>
           here
         </a>
         .
         <br />
         <br />
-        My most recent work at Valence involved the improvement of <i>Prosper</i>, a platform utilized by the Hispanic
-        Scholarship Fund (HSF) and Cheech Marin, among others, to help support students and provide scholarships. Using
-        React, node.js, SQL, and everything in between, I eliminated a plethora of bugs, helping to stabilize the
+        My most recent work at Kopius involved the improvement of <i>Prosper</i>, a platform utilized by the Hispanic
+        Scholarship Fund (HSF), Nike, and Cheech Marin, among others, to help support students and provide scholarships.
+        Using React, node.js, SQL, and everything in between, I eliminated a plethora of bugs, helping to stabilize the
         overall system. I also repaired and completed the implementation of their real-time chat and Canvas integration,
-        two primary features that were formerly unmaintained. Check out HSF{" "}
+        while re-architecting their message center and document verification processes. Check out HSF{" "}
         <a href="https://www.hsf.net/" className={styles.inlineLink}>
           here
         </a>
@@ -103,10 +103,10 @@ export const workSections: WorkSection[] = [
         (Digital Audio Workstations) such as Logic, Ableton Live, and Pro Tools.
         <br />
         <br />
-        During the past couple of years, I&apos;ve produced music under the name &quot;T.FAR&quot; on SoundCloud as well
-        as a DJ/Producer duo with my good friend Will Miner called &quot;NERVES&quot;. We&apos;ve performed at several
-        venues around the Spokane, Washington area, including a theatre festival with a crowd of over 500 people. Our
-        tracks have been played thousands of times on SoundCloud, with our most popular reaching 16k. Check out NERVES{" "}
+        During my college years, I produced music under the name &quot;T.FAR&quot; on SoundCloud as well as a
+        DJ/Producer duo with my good friend Will Miner called &quot;NERVES&quot;. We&apos;ve performed at several venues
+        around the Spokane, Washington area, including a theatre festival with a crowd of over 500 people. Our tracks
+        have been played thousands of times on SoundCloud, with our most popular reaching 16k. Check out NERVES{" "}
         <a className={styles.inlineLink} href="https://soundcloud.com/nerves_music">
           here
         </a>

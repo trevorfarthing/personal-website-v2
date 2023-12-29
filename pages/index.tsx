@@ -75,7 +75,7 @@ const Home: NextPage = () => {
                 <Divider variant="fullWidth" className={styles.secondaryDivider} />
                 <Typography variant="body1" className={styles.introText}>
                   {`I'm a full-stack software engineer, musician, and generally creative person who loves to bring innovative projects to life. 
-              I've worked with a healthcare startup, a rocket rideshare company, an industrial IoT firm, and a variety of
+              I've worked with a healthcare startup, a rocket rideshare company, a nationwide scholarship program, and a variety of
               other ventures. I'm proficient in a collection of programming languages, as well as the art of recording
               and mixing music in digital audio workstations.`}
                 </Typography>
