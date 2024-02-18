@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import styles from "../styles/music.module.scss";
-import { Divider, Fade, Grid, Grow, Typography } from "@mui/material";
+import { Box, Divider, Fade, Grid, Typography } from "@mui/material";
 import { getLinkType } from "../utils/music";
 import { trackList } from "../content/music";
 import SongCard from "../components/SongCard/SongCard";
@@ -53,6 +53,18 @@ const Music: NextPage = () => {
     player.current?.seekTo(position, type);
   };
 
+  // Add more padding to song cards for smaller breakpoints
+  const gridContainerStyles = {
+    paddingLeft: {
+      xs: "1.5rem",
+      md: 0,
+    },
+    paddingRight: {
+      xs: "1.5rem",
+      md: 0,
+    },
+  };
+
   return (
     <div>
       <Head>
@@ -65,35 +77,37 @@ const Music: NextPage = () => {
         </Typography>
         <Typography variant="body1">{"Some tracks I've produced or recorded on."}</Typography>
         <Divider variant="fullWidth" className={`${styles.divider} ${styles.secondaryDivider}`} />
-        <Grid container spacing={4} alignItems="center" justifyContent="center" className={styles.musicContainer}>
-          {trackList.map((track, index) => {
-            return (
-              <Fade in={true} timeout={1500} key={track.title} style={{ transitionDelay: `${index * 200}ms` }}>
-                <Grid item xs={12} sm={6} md={4}>
-                  <div className={styles.trackContainer}>
-                    <SongCard
-                      songTitle={track.title}
-                      albumArtSource={track.artworkSource}
-                      externalLink={{ link: track.link, linkType: getLinkType(track) }}
-                      selectedURL={selectedURL}
-                      setSelectedURL={setSelectedURL}
-                      scURL={track.scURL}
-                      isPlaying={isPlaying}
-                      setIsPlaying={setIsPlaying}
-                      seekTo={seekTo}
-                      isReady={isReady}
-                      setIsReady={setIsReady}
-                      progressEventCounter={progressEventCounter}
-                      setProgressEventCounter={setProgressEventCounter}
-                      {...(selectedURL === track.scURL ? { progress: selectedProgress } : {})}
-                      {...(selectedURL === track.scURL ? { duration: player.current?.getDuration() } : {})}
-                    />
-                  </div>
-                </Grid>
-              </Fade>
-            );
-          })}
-        </Grid>
+        <Box sx={gridContainerStyles}>
+          <Grid container spacing={4} alignItems="center" justifyContent="center" className={styles.musicContainer}>
+            {trackList.map((track, index) => {
+              return (
+                <Fade in={true} timeout={1500} key={track.title} style={{ transitionDelay: `${index * 200}ms` }}>
+                  <Grid item xs={12} sm={6} md={4}>
+                    <div className={styles.trackContainer}>
+                      <SongCard
+                        songTitle={track.title}
+                        albumArtSource={track.artworkSource}
+                        externalLink={{ link: track.link, linkType: getLinkType(track) }}
+                        selectedURL={selectedURL}
+                        setSelectedURL={setSelectedURL}
+                        scURL={track.scURL}
+                        isPlaying={isPlaying}
+                        setIsPlaying={setIsPlaying}
+                        seekTo={seekTo}
+                        isReady={isReady}
+                        setIsReady={setIsReady}
+                        progressEventCounter={progressEventCounter}
+                        setProgressEventCounter={setProgressEventCounter}
+                        {...(selectedURL === track.scURL ? { progress: selectedProgress } : {})}
+                        {...(selectedURL === track.scURL ? { duration: player.current?.getDuration() } : {})}
+                      />
+                    </div>
+                  </Grid>
+                </Fade>
+              );
+            })}
+          </Grid>
+        </Box>
         <ReactPlayerWrapper
           url={selectedURL}
           playing={isPlaying}
